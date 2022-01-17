@@ -1,25 +1,51 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-        <meta charset="utf-8"> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
 
-        <title>Example Student's HCDE 439 Physical Computing Page!</title> 
+        <title>Blinking LEDs Project!</title>
 
         <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
 
-    </head> 
-    <body> 
+    </head>
+    <body>
 
         <div class="header">
-            <h1>Example Student's Assignment 1!</h1>
+            <h1>Blinking LEDs Project</h1>
             <p>
-            <img src="red-panda.jpg" width=400></a>
+            <img src="LED.gif" width=400></a>
             </p>
             <p>
-            Here is all the documentation for assignment 1!
+            This shows three red LEDs blinking from top to bottom one after another
+            alternating every 1/10th of a second.
+            </p>
+            <p>
+            <img src="LED.JPG" width=400></a>
+            </p>
+            <p>
+            This picture shows the circuit.
+            </p>
+            <p>
+            <img src="ledsmap.png" width=400></a>
+            </p>
+            <p>
+            This is the schematic for the circuit. The resistance was calculated in the following way.
+            v = (Power source) - (Voltage Drop for LED)
+            v = 5V -1.8V = 3.2V
+            I = 30 mA (Max current through red LED)
+            R = V/I = 3.2V/O.03A = 106.7 Ohms
+            Because of these calculations, I know that I must use a resister that is larger
+            than 106.7 Ohms. I decided to use a 220 Ohms resisters because of this.
+            </p>
+            <p>
+            <img src="LEDsnip.png" width=400></a>
+            </p>
+            <p>
+            This is the arduino code that I used to make the LEDs flash in the particular pattern.
+            The code is commented on the code snippit.
             </p>
         </div>
-        
+
     </body>
 </html>
