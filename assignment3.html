@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Cameron Fahsholtz's HCDE 439 Physical Computing Page!</title>
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Fade LEDs and Button Project</h1>
+            <p>
+            <img src="photo.gif" width=400></a>
+            </p>
+            <p>
+            This GIF shows a circuit that uses photoresistor in a voltage divider
+            to change the state of a tri-color LED from blue (least amount of light)
+            to green(moderate amount of light) to red (high amount of light).
+            </p>
+            <p>
+            <img src="photo.JPG" width=400></a>
+            </p>
+            <p>
+            This picture shows arduino and the circuit.
+            </p>
+            <p>
+            <img src="photoShema.png" width=400></a>
+            </p>
+            <p>
+            This is the schematic for the circuit. The resistance for the tri-color LED
+            was calculated in the following way.
+            v = (Power source) - (Voltage Drop for LED)
+            v = 5V -1.8V = 3.2V
+            I = 30 mA (Max current through red LED)
+            R = V/I = 3.2V/O.03A = 106.7 Ohms
+            Because of these calculations, I know that I must use a resister that is larger
+            than 106.7 Ohms. I decided to use a 220 Ohms resisters because of this.
+            The resistance for R2 in the circuit with the photoresistor in a voltage divide
+            was calculated based on the range of signal I wanted to measure.
+            Photoresistor resistance ranges from about 0.9K Ohms tooo 9.6K Ohms.
+            Therefore, Halfway = R1High - ((R1High - R1Low)/2) = 9.6K Ohms - ((9.6 K Ohms - 0.9K Ohms)/2) = 5.3K Ohms
+            Therefore R1 (photoresistor) = 5.3K Ohms
+            R2 = (Vout*R1)/(Vin-Vout) = (3.3*5.3K)/(5-3.3) = 6.4K Ohms
+            I selected a large R2 because having smaller resolution is fine for my application.
+
+            </p>
+            <p>
+            <img src="photoCode.png" width=400></a>
+            </p>
+            <p>
+            This is the arduino code that I used. Based on the lighting in the room
+            I was testing the circut in, the values read in the voltage divider
+            were between 375 and 900.
+            </p>
+        </div>
+    </body>
+</html>
