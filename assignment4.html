@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Libraries!</title>
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head>
+    <body>
+
+        <div class="header">
+            <h1>Libraries Project!</h1>
+        </div>
+        <div class="assign">
+            <div class="assigns">
+                <p>
+                <img src="stopgo.gif" width=400></a>
+                </p>
+                <p>
+             This shows the capacitive touch being used to control whether a green
+             LED is turned on or a red LED is turned on.
+                </p>
+            </div>
+            <div class="assigns">
+                <p>
+                    <img src="stopgo.JPG" width=400></a>
+                </p>
+                <p>
+                This picture shows the circuit.
+                </p>
+            </div>
+            <div class="assigns">
+                <p>
+                <img src="stopgo-04.png" width=800></a>
+                </p>
+                <p>
+            This is the schematic for the circuit. The resistance was calculated in the following way for both the
+            red LED and the green LED.
+            v = (Power source) - (Voltage Drop for LED)
+            v = 5V -1.8V = 3.2V
+            I = 30 mA (Max current through red LED)
+            R = V/I = 3.2V/O.03A = 106.7 Ohms
+            Because of these calculations, I know that I must use a resister that is larger
+            than 106.7 Ohms. I decided to use a 220 Ohms resisters for both LEDs because of this.
+            I used a 1 megaohm resistor for the capacitive touch part of the circuit because
+            in order for absolute touch to activate. I used a 1 M ohms resister
+            because I didn't need the capacitive touch to be very sensitive
+            and wanted the sensor to be fast.
+                </p>
+            </div>
+            <div class="assigns">
+            <p>
+            <img src="stopcode.png" width=800></a>
+                #include <CapacitiveSensor.h>
+
+                CapacitiveSensor   cs_4_2 = CapacitiveSensor(4,2);      // 1 megohm resistor between pins 4 & 2, pin 2 is sensor pin, add wire, metal thing
+
+                void setup() {
+                   cs_4_2.set_CS_AutocaL_Millis(0xFFFFFFFF);  // turn off autocalibrate on channel 1 - just as an example
+                   Serial.begin(9600);
+                }
+
+                void loop()
+                {
+                  long start = millis();
+                  long total1 =  cs_4_2.capacitiveSensor(30);
+
+                  Serial.print(millis() - start);     // check on performance in milliseconds
+                  Serial.print("\t");                 // tab character for debug window spacing
+
+                  Serial.println(total1);             // print sensor output 1
+                  delay(1);                          // arbitrary delay to limit data to serial port
+
+                   int outputValue = map(total1, 375, 900, 0, 255);  // print out the results to the Serial Monitor:
+                  // turn red LED off and write output values to green LED
+                  if(outputValue > 500) {
+                    analogWrite(9, outputValue);
+                    digitalWrite(10, LOW);
+                  }
+                  // turn green LED off and write output values to red LED
+                  else {
+                    analogWrite(10, outputValue);
+                    digitalWrite(9, LOW);
+                  }
+                }
+            </p>
+            <p>
+            This is the arduino code that I used to make the LEDs turn on in the particular pattern.
+            The code is commented on the code snippit.
+            </p>
+            </div>
+        </div>
+
+    </body>
+</html>

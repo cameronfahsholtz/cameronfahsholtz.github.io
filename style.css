@@ -3,49 +3,96 @@ html, body {
   padding: 0 0 0 0;
   margin: 0;
   font-family: 'helvetica', 'arial', 'sans';
+
 }
 
 h1,h2,h3,h4 {
+  text-align: center;
   font-family: 'helvetica', 'arial', 'sans';
+  justify-content: center;
   }
 
 
 a {
-  color: #000;
+  color: #000000
 }
 
 .header {
+  text-align: center;
   background: #fff;
-  color: #000;
+  color: #000000;
   height: auto;
   padding: 30px 30px 30px;
+  width: 100%;
+  align-self:center;
+  float: center;
 }
 
 .header h1 {
   font-size: 50px;
+  margin-bottom: 0px;
   }
 
+.assignments {
+  width: 100%;
+  margin-bottom: 30px;
+  float: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+}
 .assignment {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 24px;
   font-family: 'helvetica', 'arial', 'sans';
-  padding: 20px 20px 20px 30px;
-  width: 250px;
-  height: 350px;
+  padding: .05%;
+  width: 40%;
+  margin-bottom: 30px;
   overflow: hidden;
   float: left;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-self: top;
+}
+
+.assigns {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: 'helvetica', 'arial', 'sans';
+  padding-left: 10%;
+  padding-right:10%;
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+  float: left;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-self: center;
+}
+.assign {
+  width: 100%;
+  margin-bottom: 30px;
+  float: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .assignment:hover { overflow:auto }
 
 .assignment a {
-    color: #000;
+    color: #000000;
     text-decoration: none;
+    font-size= 12px;
 }
 
 .assignment a:hover {
-  background: #F06;
-  color: #F06;
+  background: rgb(255, 73, 73);
+  color: rgb(255, 73, 73);
   text-decoration: none;
 }
 
@@ -57,14 +104,14 @@ a {
 
 .widebody {
     width: 800px;
-    padding: 0px 30px 30px 30px;
+    padding: 30px 30px 30px 30px;
 }
 
 .widebody a {
 }
 
 .widebody a:hover {
-  background: #F06;
+  background: rgb(255, 73, 73);
   color: #FFF;
   text-decoration: none;
 }
