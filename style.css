@@ -6,6 +6,13 @@ html, body {
 
 }
 
+code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+}
+
 h1,h2,h3,h4 {
   text-align: center;
   font-family: 'helvetica', 'arial', 'sans';
